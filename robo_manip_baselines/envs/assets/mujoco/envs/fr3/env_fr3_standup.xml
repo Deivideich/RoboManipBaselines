@@ -1,0 +1,14 @@
+<mujoco model="fairino3_scene">
+  <statistic center="0 0 0.5" extent="1.2"/>
+  <include file="../../robots/fr3/fairino3_v6_config.xml"/>
+
+  <worldbody>
+    <light directional="true" diffuse=".8 .8 .8" specular=".2 .2 .2" pos="0 0 5" dir="0 0 -1"/>
+    <geom name="floor" type="plane" size="0 0 .25" material="grid" condim="3"/>
+
+    <body name="fairino_root_frame" pos="0 0 0" childclass="fairino3">
+      <include file="../../robots/fr3/fairino3_v6_body.xml"/>
+    </body>
+  </worldbody>
+
+</mujoco>
