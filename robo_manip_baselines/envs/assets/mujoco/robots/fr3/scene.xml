@@ -1,0 +1,23 @@
+<mujoco model="fairino3_scene">
+  <statistic center="0 0 0.5" extent="1.2"/>
+
+  <include file="fairino3_v6_config.xml"/>
+
+  <worldbody>
+    <light directional="true" diffuse=".8 .8 .8" specular=".2 .2 .2" pos="0 0 5" dir="0 0 -1"/>
+    <geom name="floor" type="plane" size="0 0 .25" material="grid" condim="3"/>
+
+    <body name="fairino_root_frame" pos="0 0 0" childclass="fairino3">
+      <include file="fairino3_v6_body.xml"/>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <general name="actuator_j1" joint="j1" ctrlrange="-3.0543 3.0543" class="fairino3"/>
+    <general name="actuator_j2" joint="j2" ctrlrange="-4.6251 1.4835" class="fairino3"/>
+    <general name="actuator_j3" joint="j3" ctrlrange="-2.8274 2.8274" class="fairino3"/>
+    <general name="actuator_j4" joint="j4" ctrlrange="-4.6251 1.4835" class="size_wrist"/>
+    <general name="actuator_j5" joint="j5" ctrlrange="-3.0543 3.0543" class="size_wrist"/>
+    <general name="actuator_j6" joint="j6" ctrlrange="-3.0543 3.0543" class="size_wrist"/>
+  </actuator>
+</mujoco>

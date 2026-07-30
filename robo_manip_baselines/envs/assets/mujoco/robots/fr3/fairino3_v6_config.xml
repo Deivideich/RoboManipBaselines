@@ -1,0 +1,38 @@
+<mujoco model="fairino3_shared_config">
+  <compiler angle="radian" meshdir="../../assets/meshes" autolimits="true"/>
+  <default>
+    <!-- Root class for fairino robot -->
+    <default class="fairino3">
+      <joint axis="0 0 1" damping="2.0" frictionloss="1.0"/>
+      
+      <general gaintype="fixed" biastype="affine" gainprm="500" biasprm="0 -500 -50" forcerange="-150 150"/>
+      
+      <default class="size_wrist">
+        <joint damping="5.0" frictionloss="0.2"/>
+        <general gainprm="40" biasprm="0 -40 -4" forcerange="-28 28"/>
+      </default>
+
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" rgba="0.89804 0.91765 0.92941 1"/>
+      </default>
+      <default class="collision">
+        <geom type="mesh" group="3" rgba="0.5 0.5 0.5 0"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture name="grid" type="2d" builtin="checker" rgb1=".1 .2 .3" rgb2=".2 .3 .4" width="512" height="512" mark="cross" markrgb=".8 .8 .8"/>
+    <material name="grid" texture="grid" texrepeat="1 1" texuniform="true"/>
+    <texture name="sky" type="skybox" builtin="gradient" rgb1=".3 .5 .7" rgb2="0 0 0" width="512" height="512"/>
+
+
+    <mesh name="base_link" file="fr3/base_link.STL"/>
+    <mesh name="shoulder_link" file="fr3/shoulder_link.STL"/>
+    <mesh name="upperarm_link" file="fr3/upperarm_link.STL"/>
+    <mesh name="forearm_link" file="fr3/forearm_link.STL"/>
+    <mesh name="wrist1_link" file="fr3/wrist1_link.STL"/>
+    <mesh name="wrist2_link" file="fr3/wrist2_link.STL"/>
+    <mesh name="wrist3_link" file="fr3/wrist3_link.STL"/>
+  </asset>
+</mujoco>
