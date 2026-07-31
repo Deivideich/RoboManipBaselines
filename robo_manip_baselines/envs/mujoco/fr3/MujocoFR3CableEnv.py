@@ -3,7 +3,8 @@ from os import path
 import mujoco
 import numpy as np
 
-from robo_manip_baselines.envs.mujoco.fr3.MujocoFR3EnvBase
+from .MujocoFR3EnvBase import MujocoFR3EnvBase
+
 
 class MujocoFR3CableEnv(MujocoFR3EnvBase):
     def __init__(
