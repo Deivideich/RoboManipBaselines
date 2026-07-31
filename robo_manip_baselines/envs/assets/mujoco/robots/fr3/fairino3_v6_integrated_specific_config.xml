@@ -1,0 +1,44 @@
+<mujoco model="fairino3_v6_integrated_specific_config">
+  <actuator>
+    <general class="size3" name="actuator_j1" joint="j1" ctrlrange="-3.0543 3.0543"/>
+    <general class="size3" name="actuator_j2" joint="j2" ctrlrange="-4.6251 1.4835"/>
+    <general class="size3_limited" name="actuator_j3" joint="j3" ctrlrange="-2.8274 2.8274"/>
+    <general class="size1" name="actuator_j4" joint="j4" ctrlrange="-4.6251 1.4835"/>
+    <general class="size1" name="actuator_j5" joint="j5" ctrlrange="-3.0543 3.0543"/>
+    <general class="size1" name="actuator_j6" joint="j6" ctrlrange="-3.0543 3.0543"/>
+
+    <general class="2f85" name="fingers_actuator" tendon="split"
+             forcerange="-5 5" ctrlrange="0 255" gainprm="0.3137255 0 0"
+             biasprm="0 -100 -10"/>
+  </actuator>
+
+  <sensor>
+    <force name="force_sensor" site="force_sensor"/>
+    <torque name="torque_sensor" site="force_sensor"/>
+  </sensor>
+
+  <contact>
+    <exclude body1="gripper_base" body2="left_driver"/>
+    <exclude body1="gripper_base" body2="right_driver"/>
+    <exclude body1="gripper_base" body2="left_spring_link"/>
+    <exclude body1="gripper_base" body2="right_spring_link"/>
+    <exclude body1="right_coupler" body2="right_follower"/>
+    <exclude body1="left_coupler" body2="left_follower"/>
+  </contact>
+
+  <tendon>
+    <fixed name="split">
+      <joint joint="right_driver_joint" coef="0.5"/>
+      <joint joint="left_driver_joint" coef="0.5"/>
+    </fixed>
+  </tendon>
+
+  <equality>
+    <connect body1="right_follower" body2="right_coupler" anchor="0 0 0"
+             solimp="0.95 0.99 0.001" solref="0.005 1"/>
+    <connect body1="left_follower" body2="left_coupler" anchor="0 0 0"
+             solimp="0.95 0.99 0.001" solref="0.005 1"/>
+    <joint joint1="right_driver_joint" joint2="left_driver_joint"
+           polycoef="0 1 0 0 0" solimp="0.95 0.99 0.001" solref="0.005 1"/>
+  </equality>
+</mujoco>

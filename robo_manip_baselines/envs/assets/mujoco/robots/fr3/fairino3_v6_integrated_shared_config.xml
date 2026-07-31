@@ -1,0 +1,119 @@
+<mujoco model="fairino3_v6_integrated_shared_config">
+  <compiler angle="radian" meshdir="../../assets/meshes" autolimits="true"/>
+
+  <default>
+    <default class="fairino3_v6">
+      <material specular="0.3" shininess="0.25"/>
+      <joint axis="0 0 1" damping="2.0" frictionloss="1.0"/>
+      <general gaintype="fixed" biastype="affine" gainprm="500" biasprm="0 -500 -50"
+               forcerange="-150 150"/>
+      <default class="size3">
+        <default class="size3_limited">
+          <joint range="-3.1415 3.1415"/>
+          <general ctrlrange="-3.1415 3.1415"/>
+        </default>
+      </default>
+      <default class="size1">
+        <general gainprm="40" biasprm="0 -40 -4" forcerange="-28 28"/>
+      </default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom type="mesh" group="3" rgba="0.5 0.5 0.5 0"/>
+      </default>
+      <site size="0.001" rgba="0.5 0.5 0.5 0.3" group="4"/>
+    </default>
+
+    <default class="2f85">
+      <mesh scale="0.001 0.001 0.001"/>
+      <general biastype="affine"/>
+      <joint axis="1 0 0"/>
+      <default class="driver">
+        <joint range="0 0.8" armature="0.005" damping="0.1" solimplimit="0.95 0.99 0.001" solreflimit="0.005 1"/>
+      </default>
+      <default class="follower">
+        <joint range="-0.872664 0.872664" armature="0.001" pos="0 -0.018 0.0065" solimplimit="0.95 0.99 0.001" solreflimit="0.005 1"/>
+      </default>
+      <default class="spring_link">
+        <joint range="-0.29670597283 0.8" armature="0.001" stiffness="0.05" springref="2.62" damping="0.00125"/>
+      </default>
+      <default class="coupler">
+        <joint range="-1.57 0" armature="0.001" solimplimit="0.95 0.99 0.001" solreflimit="0.005 1"/>
+      </default>
+      <default class="gripper_visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="gripper_collision">
+        <geom type="mesh" group="3"/>
+        <default class="pad_box1">
+          <geom mass="0" type="box" pos="0 -0.0026 0.028125" size="0.011 0.004 0.009375" friction="0.7"
+                solimp="0.95 0.99 0.001" solref="0.004 1" priority="1" rgba="0.55 0.55 0.55 1"/>
+        </default>
+        <default class="pad_box2">
+          <geom mass="0" type="box" pos="0 -0.0026 0.009375" size="0.011 0.004 0.009375" friction="0.6"
+                solimp="0.95 0.99 0.001" solref="0.004 1" priority="1" rgba="0.45 0.45 0.45 1"/>
+        </default>
+      </default>
+    </default>
+
+    <default class="d435i">
+      <material specular="0" shininess="0.25"/>
+      <default class="d435i_visual">
+        <geom group="2" type="mesh" contype="0" conaffinity="0" mass="0"/>
+      </default>
+      <default class="d435i_collision">
+        <geom group="3" type="mesh" mass="0"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture name="grid" type="2d" builtin="checker" rgb1=".1 .2 .3" rgb2=".2 .3 .4" width="512"
+      height="512" mark="cross" markrgb=".8 .8 .8"/>
+    <material name="grid" texture="grid" texrepeat="1 1" texuniform="true"/>
+    <texture name="sky" type="skybox" builtin="gradient" rgb1=".3 .5 .7" rgb2="0 0 0" width="512"
+      height="512"/>
+
+    <material class="fairino3_v6" name="white" rgba="0.95 0.95 0.95 1"/>
+    <material class="fairino3_v6" name="orange" rgba="0.95 0.45 0.1 1"/>
+
+    <mesh name="base_link" file="fr3/base_link.STL"/>
+    <mesh name="shoulder_link" file="fr3/shoulder_link.STL"/>
+    <mesh name="upperarm_link" file="fr3/upperarm_link.STL"/>
+    <mesh name="forearm_link" file="fr3/forearm_link.STL"/>
+    <mesh name="wrist1_link" file="fr3/wrist1_link.STL"/>
+    <mesh name="wrist2_link" file="fr3/wrist2_link.STL"/>
+    <mesh name="wrist3_link" file="fr3/wrist3_link.STL"/>
+
+    <material class="2f85" name="metal_gray" rgba="0.62 0.64 0.67 1"/>
+    <material class="2f85" name="gripper_black" rgba="0.15 0.15 0.15 1"/>
+    <material class="2f85" name="gray" rgba="0.46 0.46 0.46 1"/>
+    <mesh class="2f85" name="base_mount" file="robotiq2/base_mount.stl"/>
+    <mesh class="2f85" name="gripper_base" file="robotiq2/gripper_base.stl"/>
+    <mesh class="2f85" name="driver" file="robotiq2/driver.stl"/>
+    <mesh class="2f85" name="coupler" file="robotiq2/coupler.stl"/>
+    <mesh class="2f85" name="follower" file="robotiq2/follower.stl"/>
+    <mesh class="2f85" name="pad" file="robotiq2/pad.stl"/>
+    <mesh class="2f85" name="silicone_pad" file="robotiq2/silicone_pad.stl"/>
+    <mesh class="2f85" name="spring_link" file="robotiq2/spring_link.stl"/>
+
+    <material class="d435i" name="Black_Acrylic" rgba="0.070360 0.070360 0.070360 1"/>
+    <material class="d435i" name="Cameras_Gray" rgba="0.296138 0.296138 0.296138 1"/>
+    <material class="d435i" name="IR_Emitter_Lens" rgba="0.287440 0.665387 0.327778 1"/>
+    <material class="d435i" name="IR_Lens" rgba="0.035601 0.035601 0.035601 1"/>
+    <material class="d435i" name="IR_Rim" rgba="0.799102 0.806952 0.799103 1"/>
+    <material class="d435i" name="Metal_Casing" rgba="1 1 1 1"/>
+    <material class="d435i" name="RGB_Pupil" rgba="0.087140 0.002866 0.009346 1"/>
+
+    <mesh name="d435i_0" file="d435i/d435i_0.obj"/>
+    <mesh name="d435i_1" file="d435i/d435i_1.obj"/>
+    <mesh name="d435i_2" file="d435i/d435i_2.obj"/>
+    <mesh name="d435i_3" file="d435i/d435i_3.obj"/>
+    <mesh name="d435i_4" file="d435i/d435i_4.obj"/>
+    <mesh name="d435i_5" file="d435i/d435i_5.obj"/>
+    <mesh name="d435i_6" file="d435i/d435i_6.obj"/>
+    <mesh name="d435i_7" file="d435i/d435i_7.obj"/>
+    <mesh name="d435i_8" file="d435i/d435i_8.obj"/>
+  </asset>
+</mujoco>
