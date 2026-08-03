@@ -15,7 +15,7 @@ class ReachPhase1(ReachPhaseBase):
     def set_target(self):
         self.target_se3 = get_target_se3(
             self.op,
-            pos_z=1.02,  # [m]
+            pos_z=1.2,  # [m]
         )
         self.duration = 0.7  # [s]
 
@@ -24,7 +24,7 @@ class ReachPhase2(ReachPhaseBase):
     def set_target(self):
         self.target_se3 = get_target_se3(
             self.op,
-            pos_z=0.995,  # [m]
+            pos_z=1.085,  # [m]
         )
         self.duration = 0.3  # [s]
 

@@ -1,4 +1,4 @@
-<mujoco model="ur5e_cable">
+<mujoco model="fr3_cable">
   <include file="./env_fr3_common.xml"/>
 
   <asset>
@@ -26,28 +26,28 @@
     <geom name="wall4" type="box" size="10 10 0.01" pos="0 -10 10" zaxis="0 1 0" material="wall"/>
 
     <body name="table">
-      <geom type="box" size="0.275 0.5 0.4" pos="0 0 0.4" material="table_base"/>
-      <geom type="box" size="0.275 0.5 0.0075" pos="0 0 0.8075" material="table_plate"/>
+      <geom type="box" size="0.275 0.5 0.4" pos="-0.2 0 0.4" material="table_base"/>
+      <geom type="box" size="0.275 0.5 0.0075" pos="-0.2 0 0.8075" material="table_plate"/>
     </body>
 
     <body name="stand">
-      <geom type="box" size="0.33 0.33 0.4" pos="-0.605 0 0.4" material="stand"/>
+      <geom type="box" size="0.15 0.15 0.4" pos="-0.605 0 0.4" material="stand"/>
     </body>
 
     <body name="fr3_root_frame" pos="-0.605 0.0 0.8">
       <include file="../../robots/fr3/fairino3_v6_integrated_body.xml"/>
     </body>
 
-    <body name="cable" pos="-0.175 0.2 0.8325" quat="0.707105 0 0 -0.707108">
+    <body name="cable" pos="-0.375 0.2 0.8325" quat="0.707105 0 0 -0.707108">
       <include file="../../objects/cable/cable_body.xml"/>
     </body>
 
-    <body name="cable_end" pos="-0.175 -0.28 0.8325" euler="0 0 -1.5708">
+    <body name="cable_end" pos="-0.375 -0.28 0.8325" euler="0 0 -1.5708">
       <freejoint/>
       <geom type="box" size="0.02 0.015 0.015" pos="0.0 0.0 0.0" material="cable_box"/>
     </body>
 
-    <body name="poles" pos="-0.1 0.1 0.795">
+    <body name="poles" pos="-0.25 0.1 0.795">
       <geom name="pole1" type="cylinder" size="0.01 0.03" pos="0.0 0.0 0.05" material="pole"/>
       <geom name="pole2" type="cylinder" size="0.01 0.03" pos="0.05 0.0 0.05" material="pole"/>
     </body>
