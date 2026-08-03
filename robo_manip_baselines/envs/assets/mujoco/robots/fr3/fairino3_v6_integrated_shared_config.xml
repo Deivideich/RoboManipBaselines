@@ -1,21 +1,25 @@
 <mujoco model="fairino3_v6_integrated_shared_config">
   <compiler angle="radian" meshdir="../../assets/meshes" autolimits="true"/>
-
   <default>
     <default class="fairino3_v6">
       <material specular="0.3" shininess="0.25"/>
-      <joint axis="0 0 1" damping="2.0" frictionloss="1.0"/>
-      <general gaintype="fixed" biastype="affine" gainprm="500" biasprm="0 -500 -50"
+      <joint axis="0 0 1" damping="10.0" frictionloss="1.0" armature="0.05"/>
+      
+
+      <general gaintype="fixed" biastype="affine" gainprm="800" biasprm="0 -800 -160"
                forcerange="-150 150"/>
+               
       <default class="size3">
         <default class="size3_limited">
           <joint range="-3.1415 3.1415"/>
           <general ctrlrange="-3.1415 3.1415"/>
         </default>
       </default>
+      
       <default class="size1">
-        <general gainprm="40" biasprm="0 -40 -4" forcerange="-28 28"/>
+        <general gainprm="400" biasprm="0 -400 -80" forcerange="-45 45"/>
       </default>
+      
       <default class="visual">
         <geom type="mesh" contype="0" conaffinity="0" group="2"/>
       </default>
@@ -24,6 +28,7 @@
       </default>
       <site size="0.001" rgba="0.5 0.5 0.5 0.3" group="4"/>
     </default>
+
 
     <default class="2f85">
       <mesh scale="0.001 0.001 0.001"/>
