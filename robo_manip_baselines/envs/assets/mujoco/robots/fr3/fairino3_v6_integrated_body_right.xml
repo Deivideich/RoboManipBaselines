@@ -6,7 +6,7 @@
     <body name="right/shoulder_link" pos="0 0 0">
       <inertial pos="-5e-05 -0.01592 0.00226" quat="0.744752 0.662885 0.0501453 -0.058416" mass="2.24" diaginertia="0.0030407 0.00297066 0.00222527"/>
       <joint name="right/j1" class="size3" range="-3.0543 3.0543"/>
-      <geom mesh="shoulder_link" material="orange" class="visual"/>
+      <geom mesh="shoulder_link" material="white" class="visual"/>
       <geom mesh="shoulder_link" class="collision"/>
       <body name="right/upperarm_link" pos="0 0 0.14" quat="0.707105 0.707108 0 0">
         <inertial pos="0.13939 0 0.09954" quat="0.500091 0.499944 0.49984 0.500125" mass="4.94" diaginertia="0.0932144 0.0915069 0.00681258"/>
@@ -16,7 +16,7 @@
         <body name="right/forearm_link" pos="-0.28 0 0">
           <inertial pos="0.05899 8e-05 0.01299" quat="0.503704 0.496868 0.499141 0.500262" mass="2.29" diaginertia="0.0207461 0.020392 0.00263758"/>
           <joint name="right/j3" class="size3_limited" range="-2.8274 2.8274"/>
-          <geom mesh="forearm_link" material="orange" class="visual"/>
+          <geom mesh="forearm_link" material="white" class="visual"/>
           <geom mesh="forearm_link" class="collision"/>
 
           <body name="right/wrist1_link" pos="-0.24001 0 0">
@@ -28,13 +28,13 @@
             <body name="right/wrist2_link" pos="0 0 0.102" quat="0.707105 0.707108 0 0">
               <inertial pos="-5e-05 0.00233 0.01467" quat="0.994782 -0.0895282 -0.00817225 -0.048239" mass="1.56" diaginertia="0.00162682 0.00159148 0.00124415"/>
               <joint name="right/j5" class="size1" range="-3.0543 3.0543"/>
-              <geom mesh="wrist2_link" material="orange" class="visual"/>
+              <geom mesh="wrist2_link" material="white" class="visual"/>
               <geom mesh="wrist2_link" class="collision"/>
 
               <body name="right/wrist3_link" pos="0 0 0.102" quat="0.707105 -0.707108 0 0">
                 <inertial pos="-0.00055 -0.00111 -0.02005" quat="0.237266 0.664417 -0.244336 0.665248" mass="0.36" diaginertia="0.000359313 0.000230507 0.00023005"/>
                 <joint name="right/j6" class="size1" range="-3.0543 3.0543"/>
-                <geom mesh="wrist3_link" material="white" class="visual"/>
+                <geom mesh="wrist3_link" material="grey" class="visual"/>
                 <geom mesh="wrist3_link" class="collision"/>
                 <site name="right/attachment_site" group="5" pos="0 0 0" quat="0 0 0 1"/>
                   <!-- gripper: robotiq_2f85 -->

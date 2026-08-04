@@ -82,6 +82,7 @@
 
     <material class="fairino3_v6" name="white" rgba="0.95 0.95 0.95 1"/>
     <material class="fairino3_v6" name="orange" rgba="0.95 0.45 0.1 1"/>
+    <material class="fairino3_v6" name="grey" rgba="0.5 0.5 0.5 1"/>
 
     <mesh name="base_link" file="fr3/base_link.STL"/>
     <mesh name="shoulder_link" file="fr3/shoulder_link.STL"/>
