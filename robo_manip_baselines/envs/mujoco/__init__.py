@@ -32,3 +32,5 @@ from .g1.MujocoG1BottlesEnv import MujocoG1BottlesEnv
 from .fr3.MujocoFR3CableEnv import MujocoFR3CableEnv
 
 from .fr3.MujocoFR3RingEnv import MujocoFR3RingEnv
+
+from .fr3.MujocoFR3ParticleEnv import MujocoFR3ParticleEnv

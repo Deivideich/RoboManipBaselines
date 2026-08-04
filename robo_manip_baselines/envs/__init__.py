@@ -166,3 +166,8 @@ register(
     id="robo_manip_baselines/MujocoFR3RingEnv-v0",
     entry_point="robo_manip_baselines.envs.mujoco:MujocoFR3RingEnv",
 )
+
+register(
+    id="robo_manip_baselines/MujocoFR3ParticleEnv-v0",
+    entry_point="robo_manip_baselines.envs.mujoco:MujocoFR3ParticleEnv",
+)
