@@ -161,3 +161,8 @@ register(
     id="robo_manip_baselines/MujocoFR3CableEnv-v0",
     entry_point="robo_manip_baselines.envs.mujoco:MujocoFR3CableEnv",
 )
+
+register(
+    id="robo_manip_baselines/MujocoFR3RingEnv-v0",
+    entry_point="robo_manip_baselines.envs.mujoco:MujocoFR3RingEnv",
+)
