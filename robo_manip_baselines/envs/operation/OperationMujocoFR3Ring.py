@@ -30,7 +30,7 @@ class ReachPhase2(ReachPhaseBase):
     def set_target(self):
         self.target_se3 = get_target_se3(
             self.op,
-            offset_pos=np.array([-0.15, 0.05, -0.05]),  # [m]
+            offset_pos=np.array([-0.2, 0.05, -0.05]),  # [m]
         )
         self.duration = 0.3  # [s]
 

@@ -35,7 +35,7 @@
     </body>
 
     <body name="stand">
-      <geom type="box" size="0.33 0.33 0.4" pos="-0.605 0 0.4" material="stand"/>
+      <geom type="box" size="0.15 0.15 0.4" pos="-0.605 0 0.4" material="stand"/>
     </body>
 
     <body name="fr3_root_frame" pos="-0.605 0.0 0.8">
