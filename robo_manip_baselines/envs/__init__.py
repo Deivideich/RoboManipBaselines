@@ -171,3 +171,8 @@ register(
     id="robo_manip_baselines/MujocoFR3ParticleEnv-v0",
     entry_point="robo_manip_baselines.envs.mujoco:MujocoFR3ParticleEnv",
 )
+
+register(
+    id="robo_manip_baselines/MujocoFR3ClothEnv-v0",
+    entry_point="robo_manip_baselines.envs.mujoco:MujocoFR3ClothEnv",
+)
