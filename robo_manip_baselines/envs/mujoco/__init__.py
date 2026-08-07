@@ -36,3 +36,5 @@ from .fr3.MujocoFR3RingEnv import MujocoFR3RingEnv
 from .fr3.MujocoFR3ParticleEnv import MujocoFR3ParticleEnv
 
 from .fr3.MujocoFR3ClothEnv import MujocoFR3ClothEnv
+
+from .fr3_dual.MujocoFR3DualCableEnv import MujocoFR3DualCableEnv
